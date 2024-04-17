@@ -107,6 +107,11 @@ footer > .phone {
   margin-bottom: 0.5rem;
 }
 
+footer > .phone > a {
+  color: white;
+  text-decoration: none;
+}
+
 /* tablet breakpoint */
 @media (max-width: 768px) {
   header {
