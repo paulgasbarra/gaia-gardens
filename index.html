@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <header>
+    <header id="header">
       <logo
         ><icon><img src="/assets/images/gaia-logo.png" /></icon>
         <div class="logo-text">
@@ -25,18 +25,26 @@
       </logo>
       <nav>
         <ul>
-          <li><a href="#" onclick="loadPage('home')">Home</a></li>
-          <li><a href="#" onclick="loadPage('projects')">Projects</a></li>
-          <li><a href="#" onclick="loadPage('about')">About</a></li>
-          <li><a href="#" onclick="loadPage('contact')">Contact</a></li>
+          <li class="nav-item" id="home" onclick="loadPage('home')">Home</li>
+          <li class="nav-item" id="projects" onclick="loadPage('projects')">
+            Projects
+          </li>
+          <li class="nav-item" id="about" onclick="loadPage('about')">About</li>
+          <li class="nav-item" id="contact" onclick="loadPage('contact')">
+            Contact
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <div id="content"></div>
     </main>
     <footer>
-      <p>Gaia Gardens Copyright © 2024</p>
+      <div class="phone">(973) 495-3755</div>
+      <div>
+        <div class="license">NJ HIC# 13VH03809900</div>
+        <div class="copyright">Gaia Gardens Copyright © 2024</div>
+      </div>
     </footer>
     <script src="app.js"></script>
   </body>

@@ -17,13 +17,18 @@ body {
   display: flex;
   flex-direction: column;
   background: blue;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
-  background: #333;
+  background: linear-gradient(to bottom, #222, #333);
   color: #fff;
   padding: 0.5rem 1rem;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: auto;
 }
 
 logo {
@@ -65,23 +70,41 @@ nav ul li a {
 }
 
 main {
-  padding: 20px;
-  background: pink;
   text-align: center;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: scroll;
+}
+
+hero-gallery {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+hero-gallery > img {
+  height: auto;
+  width: 100%;
 }
 
 footer {
-  text-align: right;
   padding: 8px 16px;
-  background: #333;
+  background: linear-gradient(to bottom, #222, #333);
   color: white;
   position: fixed;
   width: 100%;
   bottom: 0;
   font-size: 0.75em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > .phone {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* tablet breakpoint */
@@ -118,10 +141,21 @@ footer {
 
   nav ul li {
     display: inline;
+    padding: 0.5rem;
+  }
+
+  .nav-item.selected {
+    border-bottom: 0.25rem solid lightgrey;
   }
 
   nav ul li:hover {
     background: #555;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
   }
 }
