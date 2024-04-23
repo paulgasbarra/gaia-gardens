@@ -8,25 +8,36 @@
     <main id="main">
       <div id="content">
         <div id="contact">
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="subject-line">Subject</label>
-                    <input type="text" id="subject-line" name="subject-line" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
+          <h2>Get in Touch</h2>
+          <form
+            id="contact-form"
+            action="http://localhost:8080/send"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Name <span>(required)</span></label>
+              <p></p>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group" submit="sendMessage">
+              <label for="email">Email <span>(required)</span></label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject <span>(required)</span></label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span>(required)</span></label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Please describe your request or question here."
+              ></textarea>
+            </div>
+            <button class="submit-button" type="submit">Send</button>
+          </form>
         </div>
-        
       </div>
     </main>
     <%- include('../partials/footer') %>
