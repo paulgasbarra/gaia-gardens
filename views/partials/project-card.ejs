@@ -1,0 +1,13 @@
+<!-- partials/project-card.ejs -->
+<div class="project-card <%= full ? 'full' : '' %>">
+  <a href="/projects/<%= slug %>">
+    <img class="project-photo" src="<%= image %>" alt="<%= title %>" />
+    <div class="project-title">
+      <h3><%= title %></h3>
+      <div class="project-location">
+        <i class="fa-solid fa-map-location-dot"></i> <%= location %>
+      </div>
+    </div>
+    <div class="project-description"><%= description %></div>
+  </a>
+</div>

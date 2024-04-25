@@ -149,6 +149,7 @@ hero-gallery > img {
 }
 
 /* projects */
+
 .project-two-column {
   display: flex;
   flex-direction: row;
@@ -161,6 +162,10 @@ hero-gallery > img {
   flex-direction: column;
   align-items: center;
   max-width: 50%;
+}
+.project-card a {
+  text-decoration: none;
+  color: #eee;
 }
 .project-card.full {
   max-width: 100%;

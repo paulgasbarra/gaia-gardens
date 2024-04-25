@@ -2,6 +2,9 @@ window.onload = (event) => {
   console.log("page is fully loaded");
 };
 
-const sendMessage = () => {
-  console.log("send message");
-};
+$(document).ready(function () {
+  $("body").hide();
+  $(window).on("load", function () {
+    $("body").show();
+  });
+});
