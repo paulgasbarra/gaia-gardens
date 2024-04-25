@@ -19,6 +19,8 @@ body {
   flex-direction: column;
   background: linear-gradient(to bottom, #222, #333);
   max-width: 1440px;
+  min-width: 440px;
+  overflow: hidden;
   height: 100vh;
   margin: 0 auto;
   color: #eee;
@@ -82,7 +84,7 @@ main {
   flex-direction: column;
   flex-grow: 1;
   overflow: scroll;
-  padding: 1rem;
+  padding: 2rem 1rem 8rem 1rem;
 }
 
 #home-content {
@@ -142,13 +144,36 @@ hero-gallery > img {
 }
 
 /* projects */
-
+.project-two-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
 .project-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
-  max-width: 45%;
+  max-width: 50%;
+}
+.project-card.full {
+  max-width: 100%;
+}
+@media (max-width: 780px) {
+  .project-two-column {
+    flex-direction: row;
+    flex-wrap: wrap; /* Allows wrapping of children */
+  }
+
+  .project-card {
+    max-width: 100%; /* Two cards in a row */
+  }
+
+  .project-card.full {
+    max-width: 100%; /* Full width for the full cards */
+    flex: 0 0 100%; /* Ensures it takes the full width */
+  }
 }
 .project-title {
   width: 100%;
@@ -177,7 +202,6 @@ hero-gallery > img {
 /* forms */
 
 #contact h2 {
-  margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
