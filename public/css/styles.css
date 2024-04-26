@@ -1,4 +1,4 @@
-/* Basic Reset */
+/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +34,7 @@ header {
   width: 100%;
   max-width: 1440px;
   z-index: 1000;
+  display: flex;
 }
 
 logo {
@@ -46,11 +47,19 @@ logo .logo-text {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  text-align: left;
+  margin-left: 1rem;
 }
 
 logo .logo-text h1 {
   font-size: 3rem;
   margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 nav ul {
@@ -74,6 +83,14 @@ nav ul li a {
   color: #eee;
 }
 
+nav ul li .nav-active {
+  background-color: #eee;
+  height: 2px;
+  width: 0;
+  transition: width 0.5s ease-in;
+  margin: 0 auto;
+}
+
 nav ul li a:hover {
   background-color: #555;
 }
@@ -92,7 +109,7 @@ main {
 }
 
 .parallax {
-  height: 75vh;
+  height: 80vh;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -104,7 +121,7 @@ main {
 
 .parallax-text {
   position: relative;
-  margin-bottom: 60vh;
+  margin-bottom: 61vh;
   width: 100%;
   top: 91%;
   left: 0;
@@ -133,6 +150,7 @@ main {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  height: 69vh;
 }
 .service {
   margin: 1rem 0rem;
@@ -143,9 +161,13 @@ main {
 
 /* about */
 #about-content {
-  padding-bottom: 7rem;
+  padding: 2rem;
 }
-
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .greeting {
   width: 100%;
   font-size: 3rem;
@@ -155,30 +177,32 @@ main {
 
 .about-block {
   display: flex;
+  width: 100%;
   height: 18rem;
-  align-items: center;
+
   margin-bottom: 2rem;
   overflow: hidden;
-  justify-content: space-between;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
 .about-block:nth-child(odd) {
-  flex-direction: row; /* Reverses the order: text comes before image in markup */
+  flex-direction: row;
 }
 .about-block:nth-child(even) {
-  flex-direction: row-reverse; /* Reverses the order: text comes before image in markup */
+  flex-direction: row-reverse;
 }
 
 .about-block img {
-  width: 50%; /* Adjust the width as needed */
+  width: 49%;
 }
 
 .about-block .text {
+  width: 49%;
   font-size: 1.25rem;
   text-align: left;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .bottom-gap {
@@ -197,6 +221,9 @@ hero-gallery > img {
 }
 
 /* projects */
+#project-content {
+  padding: 2rem;
+}
 
 .project-two-column {
   display: flex;
@@ -244,7 +271,9 @@ hero-gallery > img {
 }
 
 /* forms */
-
+#contact-content {
+  padding: 2rem;
+}
 #contact h2 {
   margin-bottom: 0.75rem;
 }
@@ -345,10 +374,10 @@ footer > .phone > a {
   text-decoration: none;
 }
 
-/* tablet breakpoint */
 @media (max-width: 768px) {
   header {
     padding: 20px 10px;
+    display: block;
   }
 
   nav ul {
@@ -381,6 +410,9 @@ footer > .phone > a {
     height: auto;
     flex-direction: column;
   }
+  .about-block .text {
+    width: 100%;
+  }
   .about-block img {
     width: 100%;
   }
@@ -389,9 +421,16 @@ footer > .phone > a {
   .about-block:nth-child(even) {
     flex-direction: column;
   }
+
+  .parallax {
+    height: 75vh;
+  }
 }
 
-/* mobile breakpoint */
+/* mobile breakpoint 
+
+
+*/
 @media (max-width: 480px) {
   header {
     padding: 20px 10px 0px 10px;

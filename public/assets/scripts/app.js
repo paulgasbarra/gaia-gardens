@@ -1,10 +1,16 @@
 window.onload = (event) => {
-  console.log("page is fully loaded");
+  const navItems = document.querySelectorAll(".nav-item");
+  navItems.forEach((item) => {
+    if (
+      item.children.item(0).getAttribute("href").split("/")[1] ===
+      window.location.pathname.split("/")[1]
+    ) {
+      item.children.item(1).style.width = "100%";
+    } else {
+      item.children.item(1).style.width = "0%";
+    }
+  });
 };
-
-document.addEventListener("click", function (event) {
-  console.log("click", event.target);
-});
 
 document.addEventListener("scroll", function () {
   const sections = document.querySelectorAll(".parallax");
