@@ -7,29 +7,51 @@
     <%- include('../partials/header') %>
     <main id="main">
       <div id="content">
-        <div id="home-content">
-          <hero-gallery>
-            <img
-              class="hero-image"
-              src="/assets/images/Gaia-Gardens-3.jpg"
-              alt="hero image"
-            />
-            <img
-              class="hero-image"
-              src="/assets/images/Gaia-Gardens-4.jpg"
-              alt="hero image"
-            />
-            <img
-              class="hero-image"
-              src="/assets/images/Gaia-Gardens-11.jpg"
-              alt="hero image"
-            />
-            <img
-              class="hero-image"
-              src="/assets/images/Gaia-Gardens-17-1.jpg"
-              alt="hero image"
-            />
-          </hero-gallery>
+        <div class="parallax-container">
+          <div
+            class="parallax"
+            style="background-image: url('/assets/images/Gaia-Gardens-4.jpg')"
+          >
+            <div class="parallax-text">
+              <h2>Native Wonders</h2>
+              <p>Merging native ecology with modern landscaping technique</p>
+            </div>
+          </div>
+          <div
+            class="parallax"
+            style="background-image: url('/assets/images/Gaia-Gardens-8.jpg')"
+          >
+            <div class="parallax-text">
+              <h2>Suburban Harmony</h2>
+              <p>Integrating green spaces into your special spaces</p>
+            </div>
+          </div>
+          <div
+            class="parallax"
+            style="background-image: url('/assets/images/Gaia-Gardens-3.jpg')"
+          >
+            <div class="parallax-text">
+              <h2>Curb Appeal</h2>
+              <p>Be the envy of your neighbors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="services-section">
+        <h2>Our Services</h2>
+        <div class="services">
+          <div class="service">
+            <h1>Landscaping Design</h1>
+          </div>
+          <div class="service">
+            <h1>Landscape Construction</h1>
+          </div>
+          <div class="service">
+            <h1>Green Home Consultation</h1>
+          </div>
+          <div class="service">
+            <h1>Maintenance</h1>
+          </div>
         </div>
       </div>
     </main>

@@ -27,7 +27,7 @@ app.get("/projects", function (req, res) {
       image: "../assets/images/Gaia-Gardens-8.jpg",
       title: "Hilltop Hideaway",
       location: "Montclair",
-      description: "Tucked inside a ring of ranture, a spectacular view.",
+      description: "Tucked inside a ring of nature, a spectacular view.",
       full: false,
     },
     {
