@@ -1,9 +1,10 @@
-var express = require("express");
-var serverless = require("serverless-http");
-var app = express();
+"use strict";
+const express = require("express");
+const serverless = require("serverless-http");
+const app = express();
 const bodyParser = require("body-parser");
 
-var projects = require("./public/data/projects.json");
+const projects = require("./public/data/projects.json");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
