@@ -2,7 +2,7 @@
   "name": "gaiagardens",
   "version": "1.0.0",
   "description": "A custom website built for a client who specializes in sustainable landscaping.",
-  "main": "functions/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server-local.js",
