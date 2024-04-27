@@ -1,6 +1,9 @@
 var express = require("express");
 var app = express();
 const bodyParser = require("body-parser");
+
+var projects = require("./public/data/projects.json");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -13,34 +16,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/projects", function (req, res) {
-  const projectData = [
-    {
-      slug: "verona-patio",
-      image: "../assets/images/Gaia-Gardens-17-1.jpg",
-      title: "A Patio for Friends",
-      location: "Verona",
-      description: "A lovely native escape surrounds the perfect hosting area.",
-      full: false,
-    },
-    {
-      slug: "verona-patio",
-      image: "../assets/images/Gaia-Gardens-8.jpg",
-      title: "Hilltop Hideaway",
-      location: "Montclair",
-      description: "Tucked inside a ring of nature, a spectacular view.",
-      full: false,
-    },
-    {
-      slug: "verona-patio",
-      image: "../assets/images/Gaia-Gardens-4.jpg",
-      title: "A Moment of Mindfullness",
-      location: "Genridge",
-      description:
-        "A peaceful retreat with a focus on meditation and relaxation.",
-      full: true,
-    },
-  ];
-  res.render("pages/projects", { projects: projectData });
+  res.render("pages/projects", { projects: projects });
 });
 
 app.get("/about", function (req, res) {
