@@ -2,12 +2,12 @@
   "name": "gaiagardens",
   "version": "1.0.0",
   "description": "A custom website built for a client who specializes in sustainable landscaping.",
-  "main": "app.js",
+  "main": "functions/server.js",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server-local.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "build": "netlify-lambda build express"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "netlify-lambda": "^2.0.16",
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "serverless-http": "^3.2.0"
