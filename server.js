@@ -1,4 +1,5 @@
 var express = require("express");
+var serverless = require("serverless-http");
 var app = express();
 const bodyParser = require("body-parser");
 
@@ -35,5 +36,6 @@ app.post("/submit-form", function (req, res) {
   console.log("sending mail to", req.body);
   res.render("pages/success");
 });
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = app;
+module.exports.handler = serverless(app);

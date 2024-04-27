@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
-    "dev": "nodemon server.js | browser-sync start --config bs-config.js",
+    "dev": "nodemon server-local.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp"
   },
@@ -17,6 +17,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "nodemailer": "^6.9.13",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "serverless-http": "^3.2.0"
   }
 }
