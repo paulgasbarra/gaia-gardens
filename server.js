@@ -21,16 +21,16 @@ app.get("/projects", function (req, res) {
   res.render("pages/projects", { projects: projects });
 });
 
+app.get("/projects/:slug", function (req, res) {
+  res.render("pages/projects/" + req.params.slug);
+});
+
 app.get("/about", function (req, res) {
   res.render("pages/about");
 });
 
 app.get("/contact", function (req, res) {
   res.render("pages/contact");
-});
-
-app.get("/projects/:slug", function (req, res) {
-  res.render("pages/projects/" + req.params.slug);
 });
 
 app.post("/submit-form", function (req, res) {
