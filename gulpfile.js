@@ -13,7 +13,7 @@ gulp.task("ejs", () => {
     .pipe(ejs({ projects: projects })) // Pass data to EJS
     .pipe(replace("/assets/images/", "/images/"))
     .pipe(replace("/assets/scripts/", "/scripts/"))
-    .pipe(replace("/assets/css/", "/styles/"))
+    .pipe(replace("/assets/css/", "/css/"))
     .pipe(htmlmin({ collapseWhitespace: true })) // Minify HTML
     .pipe(rename({ extname: ".html" })) // Rename file extensions to .html
     .pipe(gulp.dest("dist")); // Output to dist folder
@@ -35,7 +35,7 @@ gulp.task("images", function () {
 gulp.task("css", function () {
   return gulp
     .src("./public/css/*") // Adjust the source directory as needed
-    .pipe(gulp.dest("dist/styles")); // Output directory
+    .pipe(gulp.dest("dist/css")); // Output directory
 });
 
 gulp.task("default", gulp.series("ejs", "scripts", "images", "css"));
