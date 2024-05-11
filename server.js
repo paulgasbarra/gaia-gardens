@@ -1,10 +1,10 @@
 "use strict";
-const express = require("express");
-const serverless = require("serverless-http");
-const app = express();
-const bodyParser = require("body-parser");
+import express from "express";
+import serverless from "serverless-http";
+import bodyParser from "body-parser";
+import { projects } from "./public/data/projects.js";
 
-const { projects } = require("./public/data/projects.js");
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -38,5 +38,5 @@ app.post("/submit-form", function (req, res) {
   res.render("pages/success");
 });
 
-module.exports = app;
-module.exports.handler = serverless(app);
+export default app;
+export const handler = serverless(app);
