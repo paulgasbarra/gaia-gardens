@@ -4,7 +4,7 @@ const serverless = require("serverless-http");
 const app = express();
 const bodyParser = require("body-parser");
 
-const projects = require("./public/data/projects.json");
+const { projects } = require("./public/data/projects.js");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -1,11 +1,11 @@
-const gulp = require("gulp");
-const ejs = require("gulp-ejs");
-const rename = require("gulp-rename");
-const htmlmin = require("gulp-htmlmin");
-const replace = require("gulp-replace");
-const clean = require("gulp-rimraf");
-
-const projects = require("./public/data/projects.json");
+import gulp from "gulp";
+import ejs from "gulp-ejs";
+import rename from "gulp-rename";
+import htmlmin from "gulp-htmlmin";
+import replace from "gulp-replace";
+import imagemin from "gulp-imagemin";
+import size from "gulp-size";
+import { projects } from "./public/data/projects.js";
 
 gulp.task("ejs", () => {
   return gulp
@@ -16,26 +16,31 @@ gulp.task("ejs", () => {
     .pipe(replace("/assets/css/", "/css/"))
     .pipe(htmlmin({ collapseWhitespace: true })) // Minify HTML
     .pipe(rename({ extname: ".html" })) // Rename file extensions to .html
-    .pipe(gulp.dest("dist")); // Output to dist folder
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("scripts", function () {
   return gulp
-    .src("./public/assets/scripts/*.js") // Adjust the source directory as needed
-    .pipe(gulp.dest("dist/scripts")); // Output directory
+    .src("./public/assets/scripts/*.js")
+    .pipe(gulp.dest("dist/scripts"));
 });
 
 gulp.task("images", function () {
   return gulp
-    .src("./public/assets/images/*") // Adjust the source directory as needed
-    .pipe(gulp.dest("dist/images")) // Output directory
-    .on("error", console.error.bind(console));
+    .src("./public/assets/images/**/*")
+    .pipe(
+      imagemin({
+        optimizationLevel: 3,
+        progressive: true,
+        interlaced: true,
+      })
+    )
+    .pipe(gulp.dest("dist/images"))
+    .pipe(size({ title: "images" }));
 });
 
 gulp.task("css", function () {
-  return gulp
-    .src("./public/css/*") // Adjust the source directory as needed
-    .pipe(gulp.dest("dist/css")); // Output directory
+  return gulp.src("./public/css/*").pipe(gulp.dest("dist/css"));
 });
 
 gulp.task("default", gulp.series("ejs", "scripts", "images", "css"));

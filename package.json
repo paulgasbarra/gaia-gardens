@@ -10,6 +10,7 @@
     "build": "netlify-lambda build express",
     "gulp": "gulp"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -24,10 +25,13 @@
   },
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-debug": "^5.0.1",
     "gulp-ejs": "^5.1.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.1.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
-    "gulp-rimraf": "^1.0.0"
+    "gulp-rimraf": "^1.0.0",
+    "gulp-size": "^5.0.0"
   }
 }
