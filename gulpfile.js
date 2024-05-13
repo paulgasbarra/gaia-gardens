@@ -27,16 +27,8 @@ gulp.task("scripts", function () {
 
 gulp.task("images", function () {
   return gulp
-    .src("./public/assets/images/**/*")
-    .pipe(
-      imagemin({
-        optimizationLevel: 3,
-        progressive: true,
-        interlaced: true,
-      })
-    )
-    .pipe(gulp.dest("dist/images"))
-    .pipe(size({ title: "images" }));
+    .src("./public/assets/images/**/*", { encoding: false })
+    .pipe(gulp.dest("dist/images"));
 });
 
 gulp.task("css", function () {
