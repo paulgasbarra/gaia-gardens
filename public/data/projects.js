@@ -8,7 +8,7 @@ export const projects = [
     full: false,
   },
   {
-    slug: "verona-patio",
+    slug: "montclair-garden",
     image: "../assets/images/Gaia-Gardens-8.jpg",
     title: "Hilltop Hideaway",
     location: "Montclair",
@@ -16,7 +16,7 @@ export const projects = [
     full: false,
   },
   {
-    slug: "verona-patio",
+    slug: "glenridge-garden",
     image: "../assets/images/Gaia-Gardens-4.jpg",
     title: "A Moment of Mindfullness",
     location: "Genridge",

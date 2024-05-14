@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/projects", function (req, res) {
-  res.render("pages/projects", { projects: projects });
+  res.render("pages/projects/index", { projects: projects });
 });
 
 app.get("/projects/:slug", function (req, res) {
@@ -26,7 +26,7 @@ app.get("/projects/:slug", function (req, res) {
 });
 
 app.get("/about", function (req, res) {
-  res.render("pages/about");
+  res.render("pages/about/index");
 });
 
 app.get("/contact", function (req, res) {

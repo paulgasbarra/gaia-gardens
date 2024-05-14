@@ -24,6 +24,7 @@
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
+    "del": "latest",
     "gulp": "^5.0.0",
     "gulp-debug": "^5.0.1",
     "gulp-ejs": "^5.1.0",

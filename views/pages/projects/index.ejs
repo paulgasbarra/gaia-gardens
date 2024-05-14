@@ -6,20 +6,12 @@
   <body>
     <%- include('../../partials/header') %>
     <main id="main">
-      <div id="content">
-        <div class="project-card full">
-          <img class="project-photo" src="/assets/images/Gaia-Gardens-4.jpg" />
-          <div class="project-title">
-            <h3>A Patio for Friends</h3>
-            <div class="project-location">
-              <i class="fa-solid fa-map-location-dot"></i>
-              Verona
-            </div>
-          </div>
-          <div class="project-description">
-            A lovely native escape surrounds the perfect hosting area
-          </div>
+      <div id="project-content">
+        <div class="project-two-column">
+          <%- include('../../partials/project-card', projects[0]) %> <%-
+          include('../../partials/project-card', projects[1]) %>
         </div>
+        <%- include('../../partials/project-card', projects[2]) %>
         <!-- This will be either a grid of photos or a two part photo left/ text right
             these will link to a scrollable gallery of 3 to 5 images that will be presented horizontal
             on wide screens and vertical on mobile screens.  -->

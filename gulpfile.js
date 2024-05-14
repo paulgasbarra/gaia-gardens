@@ -1,11 +1,14 @@
 import gulp from "gulp";
 import ejs from "gulp-ejs";
+import { deleteAsync } from "del";
 import rename from "gulp-rename";
 import htmlmin from "gulp-htmlmin";
 import replace from "gulp-replace";
-import imagemin from "gulp-imagemin";
-import size from "gulp-size";
 import { projects } from "./public/data/projects.js";
+
+gulp.task("clean", () => {
+  return deleteAsync(["dist"]);
+});
 
 gulp.task("ejs", () => {
   return gulp
@@ -31,8 +34,18 @@ gulp.task("images", function () {
     .pipe(gulp.dest("dist/images"));
 });
 
-gulp.task("css", function () {
-  return gulp.src("./public/css/*").pipe(gulp.dest("dist/css"));
+gulp.task("fonts", function () {
+  return gulp.src("./public/assets/fonts/**/*").pipe(gulp.dest("dist/fonts"));
 });
 
-gulp.task("default", gulp.series("ejs", "scripts", "images", "css"));
+gulp.task("css", function () {
+  return gulp
+    .src("./public/css/*")
+    .pipe(replace("/assets/fonts/", "/fonts/"))
+    .pipe(gulp.dest("dist/css"));
+});
+
+gulp.task(
+  "default",
+  gulp.series("clean", "ejs", "fonts", "scripts", "images", "css")
+);
