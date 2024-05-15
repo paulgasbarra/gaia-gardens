@@ -7,8 +7,8 @@
     "start": "nodemon server.js",
     "dev": "nodemon server-local.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "netlify-lambda build express",
-    "gulp": "gulp"
+    "build": "server.js",
+    "gulp": "nodemon server.js"
   },
   "type": "module",
   "keywords": [],
