@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 import { projects } from "./public/data/projects.js";
 //import nodemailer from "nodemailer";
 
+import "dotenv/config";
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -61,4 +63,7 @@ app.post("/submit-form", function (req, res) {
   // });
 });
 
+app.listen(process.env.PORT, () =>
+  console.log(`Server running on port ${process.env.PORT}`)
+);
 export default app;
