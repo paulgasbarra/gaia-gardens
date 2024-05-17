@@ -2,7 +2,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { projects } from "./public/data/projects.js";
-//import nodemailer from "nodemailer";
+import nodemailer from "nodemailer";
 
 import "dotenv/config";
 
@@ -36,31 +36,31 @@ app.get("/contact", function (req, res) {
 });
 
 app.post("/submit-form", function (req, res) {
-  // const { name, email, township, message } = req.body;
-  // let transporter = nodemailer.createTransport({
-  //   host: process.env.SMTP_HOST,
-  //   port: process.env.SMTP_PORT,
-  //   secure: true,
-  //   auth: {
-  //     user: process.env.EMAIL_ADDRESS,
-  //     pass: process.env.EMAIL_PASSWORD,
-  //   },
-  // });
-  // let mailOptions = {
-  //   from: email,
-  //   to: process.env.EMAIL_ADDRESS,
-  //   subject: `Gaia Gardens Contact Request: ${name} from ${township} has contacted you`,
-  //   text: `${name} writes ${message}`,
-  // };
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (error) {
-  //     console.error("Error sending mail:", error);
-  //     res.render("pages/contact-error", { error: error.message });
-  //   } else {
-  //     console.log("Mail sent:", info.response);
-  //     res.render("pages/contact-success");
-  //   }
-  // });
+  const { name, email, township, message } = req.body;
+  let transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_ADDRESS,
+      pass: process.env.EMAIL_PASSWORD,
+    },
+  });
+  let mailOptions = {
+    from: email,
+    to: process.env.EMAIL_ADDRESS,
+    subject: `Gaia Gardens Contact Request: ${name} from ${township} has contacted you`,
+    text: `${name} writes ${message}`,
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending mail:", error);
+      res.render("pages/contact-error", { error: error.message });
+    } else {
+      console.log("Mail sent:", info.response);
+      res.render("pages/contact-success");
+    }
+  });
 });
 
 app.listen(process.env.PORT, () =>
