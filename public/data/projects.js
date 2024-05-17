@@ -19,7 +19,7 @@ export const projects = [
     slug: "glenridge-garden",
     image: "../assets/images/Gaia-Gardens-4.jpg",
     title: "A Moment of Mindfullness",
-    location: "Genridge",
+    location: "Glenridge",
     description:
       "A peaceful retreat with a focus on meditation and relaxation.",
     full: true,
