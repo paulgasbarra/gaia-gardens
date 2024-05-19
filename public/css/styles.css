@@ -14,6 +14,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Cormorant Garamond Bold";
+  src: url("../assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* website */
+
 html {
   font-size: 16px;
 }
@@ -29,7 +39,7 @@ body {
   background: linear-gradient(to bottom, #222, #333);
   max-width: 1440px;
   min-width: 375px;
-  height: 100vh;
+  height: auto;
   margin: 0 auto;
   color: #eee;
   overflow: scroll;
@@ -45,6 +55,7 @@ header {
   max-width: 1440px;
   z-index: 1000;
   display: flex;
+  overflow: hidden;
 }
 
 logo {
@@ -370,16 +381,9 @@ hero-gallery > img {
 
 .contact-confirmation {
   width: 100%;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.contact-confirmation p {
-  width: 50%;
-  position: relative;
-  margin: 0 auto;
+  height: 70vh;
+  padding: 2rem;
+  background: transparent;
 }
 
 /* footer */
@@ -465,7 +469,27 @@ footer > .phone > a {
 @media (max-width: 480px) {
   header {
     padding: 20px 10px 0px 10px;
-    font-size: 1em;
+    font-size: 2em;
+    height: auto;
+  }
+
+  logo {
+    height: 5rem;
+  }
+
+  logo .logo-text h1 {
+    font-family: "Cormorant Garamond Bold", Times, serif, serif;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .logo-text p {
+    background: red;
+    display: none;
+  }
+
+  nav {
+    flex-direction: row;
   }
 
   nav ul {
@@ -477,6 +501,12 @@ footer > .phone > a {
   nav ul li {
     display: inline;
     padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  nav ul li a {
+    padding: 0.1rem;
   }
 
   .nav-item.selected {
