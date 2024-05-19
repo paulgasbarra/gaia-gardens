@@ -518,6 +518,10 @@ footer > .phone > a {
     cursor: pointer;
   }
 
+  .parallax {
+    background-size: contain;
+  }
+
   #contact-form {
     font-weight: 700;
     font-size: 1.5rem;
