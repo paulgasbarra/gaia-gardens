@@ -519,7 +519,7 @@ footer > .phone > a {
   }
 
   .parallax {
-    background-size: contain;
+    background: contain no-repeat;
   }
 
   #contact-form {
