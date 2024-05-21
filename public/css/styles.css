@@ -350,7 +350,6 @@ hero-gallery > img {
   padding: 0.5rem;
   font-size: 1rem;
   height: 10rem;
-
   background-color: #eee;
 }
 
@@ -361,6 +360,8 @@ hero-gallery > img {
   background-color: #eee;
   border: none;
   border-right: 0.5rem solid transparent;
+  border-radius: 0.25rem;
+  height: 2.5rem;
 }
 
 .form-group input:focus-visible,
