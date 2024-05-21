@@ -474,6 +474,8 @@ footer > .phone > a {
 
   .parallax {
     height: 75vh;
+    background-attachment: scroll;
+    background-position: center;
   }
 }
 
@@ -528,11 +530,6 @@ footer > .phone > a {
   nav ul li:hover {
     background: #555;
     cursor: pointer;
-  }
-
-  .parallax {
-    background-attachment: scroll;
-    background-position: center;
   }
 
   .parallax:nth-of-type(1) {
