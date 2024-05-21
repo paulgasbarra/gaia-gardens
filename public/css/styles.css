@@ -531,6 +531,12 @@ footer > .phone > a {
     cursor: pointer;
   }
 
+  .parallax {
+    height: 75vh;
+    background-attachment: scroll;
+    background-position: center;
+  }
+
   .parallax:nth-of-type(1) {
     background-image: url("/assets/images/Gaia-Gardens-4.jpg");
   }
